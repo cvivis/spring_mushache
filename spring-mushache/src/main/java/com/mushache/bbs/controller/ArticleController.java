@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -20,17 +21,25 @@ import java.util.Optional;
 @RequestMapping("/articles")
 public class ArticleController {
 
-//    private final ArticleRepository articleRepositorny;
-//    public ArticleController(ArticleRepository articleRepository) {
-//        this.articleRepositorny = articleRepositorny;
-//    }
-
     private final ArticleRepository articleRepository;
 
     public ArticleController(ArticleRepository articleRepository) {
         this.articleRepository = articleRepository;
     }
 
+    @GetMapping("/list")
+    public String list(Model model){
+        List<Article> articles = articleRepository.findAll();
+        model.addAttribute("articles",articles);
+
+
+        return "articles/list";
+    }
+
+    @GetMapping("")
+    public String index(){
+        return "redirect:/articles/list";
+    }
 
 
     @GetMapping(value = "/new")
