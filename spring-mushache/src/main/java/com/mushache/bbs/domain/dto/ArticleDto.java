@@ -1,5 +1,7 @@
 package com.mushache.bbs.domain.dto;
 
+import com.mushache.bbs.domain.entity.Article;
+
 public class ArticleDto {
 
     private Long id;
@@ -11,10 +13,15 @@ public class ArticleDto {
         this.content = content;
     }
 
+    public Article toEntity(){
+        return new Article(title,content);
+    }
+
+
     @Override
     public String toString() {
         return "ArticleDto{" +
-                "id=" + id +
+//                "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 '}';
