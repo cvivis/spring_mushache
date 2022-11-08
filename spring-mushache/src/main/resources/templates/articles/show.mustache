@@ -1,6 +1,18 @@
+{{>layouts/header}}
 <div>
-    <h1>이페이지는 show 입니다</h1>
+    <h3>이페이지는 show 입니다</h3>
     {{#article}}
-        {{id}} {{title}} {{content}}
+        <div class="card mt-5" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">게시글 {{id}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{title}}</h6>
+                <p class="card-text"> {{content}}</p>
+            </div>
+        </div>
     {{/article}}
+
+
+    <br><a href="/articles/new">new article</a></br>
+    <br><a href="/articles">list article</a></br>
 </div>
+{{>layouts/footer}}
