@@ -1,5 +1,6 @@
 package com.mushache.bbs.domain.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Generated;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "Article2")
 @Getter
+@AllArgsConstructor
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
