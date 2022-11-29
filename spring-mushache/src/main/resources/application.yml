@@ -14,11 +14,7 @@ spring:
 #    username: cvivis
 #    password: hsy0408
 
-  jpa:
-    show-sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    database: mysql
-    hibernate.ddl-auto: update
+
 #    hibernate.naming.strategy: org.hibernate.cfg.ImprovedNamingStrategy
 #    hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 #    generate-ddl: update
